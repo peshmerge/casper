@@ -30,23 +30,23 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="post-header">
-        <?php if ( 'post' == get_post_type() ) : ?>
-        	<span class="post-meta">
-        	    <?php 
-        	        if(  false == get_theme_mod( 'casper_hide_dates') ) {
-        	            casper_posted_on(); 
-        	        }
-        	        if(  false == get_theme_mod( 'casper_hide_categories') ) {
-        	            printf( __( ' | ', 'casper' ).'%1$s', $category_list );
-        	        }
-        	        if(  false == get_theme_mod( 'casper_hide_tags') ) {
-        	            if ( '' != $tag_list ) { _e(' in ', 'casper'); } printf($tag_list); 
-        	        }
-        	    	edit_post_link( __( 'Edit&rarr;', 'casper' ), '<span class="edit-link">&nbsp;&bull;&nbsp;', '</span>' ); 
-        	    ?>
-        	</span>
-		<?php endif; ?>
         <h1 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+        <?php if ( 'post' == get_post_type() ) : ?>
+            <span class="post-meta">
+        	    <?php
+                if(  false == get_theme_mod( 'casper_hide_dates') ) {
+                    casper_posted_on();
+                }
+                if(  false == get_theme_mod( 'casper_hide_categories') ) {
+                    printf( __( ' | ', 'casper' ).'%1$s', $category_list );
+                }
+                if(  false == get_theme_mod( 'casper_hide_tags') ) {
+                    if ( '' != $tag_list ) { _e(' in ', 'casper'); } printf($tag_list);
+                }
+                edit_post_link( __( 'Edit&rarr;', 'casper' ), '<span class="edit-link">&nbsp;&bull;&nbsp;', '</span>' );
+                ?>
+        	</span>
+        <?php endif; ?>
         <?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
         	$image_id = get_post_thumbnail_id();
         	$thumb_url = wp_get_attachment_image_src($image_id,'thumbnail', true);
@@ -77,7 +77,6 @@
 	<?php endif; ?>
 
 	<footer class="post-footer">
-
 	    <section class="author">
 	    	<?php echo get_avatar( get_the_author_meta( 'ID' ) , 100 ); ?>
 	        <h4><?php the_author_link(); ?></h4>

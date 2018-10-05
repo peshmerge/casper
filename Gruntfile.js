@@ -14,7 +14,7 @@
                 '  License URI:      http://www.gnu.org/licenses/gpl-2.0.html\n' +
                 '  Text Domain:      casper\n' +
                 '  Domain Path:      /languages/\n' +
-                '  Tags:             responsive-layout, black, white, one-column, fluid-layout, custom-header, custom-menu, editor-style\n' +
+                '  Tags:            one-column, custom-header, custom-menu, editor-style\n' +
                 '  GitHub Theme URI: <%= pkg.repository.url %>\n' +
                 '  GitHub Branch:    master\n' +
                 '  Casper is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.\n' +
